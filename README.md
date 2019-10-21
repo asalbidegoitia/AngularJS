@@ -8,6 +8,13 @@ Ejercicios de Angular JS del repositorio EjerciciosAngularJS unificados en un mi
 
 ![image](https://user-images.githubusercontent.com/16878209/67201516-c4c90400-f406-11e9-8c16-be77462a0994.png)
 
+  # El proyecto se compone de varias secciones:
+    
+    <pre><code>Frutas, Alumnos, Creditos, Componentes, Promesas, Filter, Map, Reduce, Servicios, CRUD, Formulario, Pokémon y Ejercicios         anteriores.
+    </code></pre>
+ 
+ # A lo largo de estas secciones, se han ido desarrollando las diferentes herramientas de  <code>AngularJS</code>
+     
 
 ## Pasos a seguir para clonar el proyecto en otro equipo:
 
@@ -33,5 +40,4 @@ Ejercicios de Angular JS del repositorio EjerciciosAngularJS unificados en un mi
   
   - Instalamos cliente postman que es un cliente para hacer peticiones REST
     https://www.getpostman.com/downloads/
-
-
+    
