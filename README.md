@@ -34,4 +34,3 @@ Ejercicios de Angular JS del repositorio EjerciciosAngularJS unificados en un mi
     https://www.getpostman.com/downloads/
 
 
-prueba
