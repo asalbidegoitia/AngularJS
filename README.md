@@ -15,7 +15,8 @@ Ejercicios de Angular JS del repositorio EjerciciosAngularJS unificados en un mi
   - Desde MSDOS colocarte en la carpeta
   - Copiar el enlace del clonar el proyecto de Git `https://github.com/asalbidegoitia/EjerciciosAngularJS.git`.
   - Desde MSDOS: git clone ruta
-
+  - Tambien se puede hacer desde Visual Studio code en vez de MSDOS. Para hacerlo abrir la carpeta en VSCode y 
+    en el apartado de git (instalar el complemento si no esta) abrir la terminal y hacer git clone ruta.
 
 ## Comando para ejecutar el LiveServer en el terminal
   - Colocarse en la carpeta del donde esté la BD
