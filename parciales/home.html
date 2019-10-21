@@ -1,0 +1,56 @@
+<h1>Home</h1>
+<h2>Documentacion</h2>
+<ul>
+    <li><a href="https://angularjs.org/" target="_blank">Documentacion oficial</a></li>
+    <li><a href="http://cursoangularjs.es/" target="_blank">Curso Angular js</a></li>
+</ul>
+
+<p>Pasos para montar el sistema de Routing de Angular JS</p>
+<ol>
+    <li>Descargar e incluir en index.html la libreria de <code>angular-route.js</code></li>
+    <li>Definir e incluir en index.html como funcionan las rutas <code>js/config.js</code></li>
+    <li>Incluir en index.html la directiva <code> ng-view</code> para que cambie las vistas</li>
+</ol>
+
+<h2>Ejercicios</h2>
+<ul>
+    <li><a href="#!/ejercicio1">Ejercicio 1</a></li>
+    <li><a href="#!/ejercicio2">Ejercicio 2 - Profesor</a></li>
+    <li><a href="#!/ejercicio3">Ejercicio 3 - Fruteria</a></li>
+    <li><a href="#!/componente">Ejercicio Componentes</a></li>
+    <li><a href="#!/tareas">Ejercicio CRUD</a></li>
+    <li><a href="#!/httpRequest">Ejercicio HttpRequest</a></li>
+    <li><a href="#!/Jsonp">Ejercicio Localizacion</a></li>
+</ul>
+
+<h3>Ejemplo rutas</h3>
+<pre>
+    <code>
+            app.config( function( $routeProvider ){
+
+                $routeProvider
+                  .when('/',{
+                      templateUrl: 'parciales/home.html'
+                  })
+                  .when('/alumnos',{
+                      templateUrl: 'parciales/alumnos.html'
+                  })
+                  .when('/profesores',{
+                      templateUrl: 'parciales/profesores.html'
+                  })
+                  .otherwise({
+                    redirectTo: '/'
+                  })
+              
+              })
+    </code>
+</pre>
+
+<h3>Ejemplo Ruta con parametros</h3>
+<p></p>
+<ul>
+    <li><a ng-href="#!/detalle/3">Detalle registro 3</a></li>
+    <li><a ng-href="#!/detalle/11">Detalle registro 11</a></li>
+</ul>
+
+

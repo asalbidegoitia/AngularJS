@@ -1,0 +1,113 @@
+<h1>Programacion Funcional</h1>
+<h4>Ejemplos de programacion funcional con Filter, Map y reduce</h4>
+
+<div class="row text-center">
+
+    <div class="col">
+        <h2>Filter</h2><img src="https://miro.medium.com/max/1257/1*TOPYVvfMBmjajPh-fqZ9GQ.gif" class="img-thumbnail">
+    </div>
+
+    <div class="col">
+        <h2>Map</h2><img src="https://miro.medium.com/max/1257/1*4EGwsCicbWJeml2aAm714A.gif" class="img-thumbnail">
+    </div>
+
+    <div class="col">
+        <h2>Reduce</h2><img src="https://miro.medium.com/max/1257/1*dhTC_FFgiH3mKROrnDj12w.gif" class="img-thumbnail">
+    </div>
+</div>
+
+<div class="row" ng-controller="frutasController">
+    <div class="col text-center"> <strong>Frutas precio mayor que 2€:</strong>
+        <br />
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" ng-repeat="nombre in nombre2e">{{nombre}}</li>
+        </ul>
+    </div>
+    <div class="col">
+        <table class="table text-center">
+            <thead>
+                <th>Listado de precios</th>
+                <th>Precio Valor multiplicado por 2</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat='p in precios'>
+                    <td>{{p}} </td>
+                    <td>{{precioPor2[$index]}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col">Total del precio de todas las frutas: {{totalEuros | currency}} </div>
+</div>
+
+<h2>Ejercicio Real con Contratos</h2>
+<p>Para poder jugar con filter y map se se puede pedir que:</p>
+<ol>
+    <li>Obtengan todos los contratos cuyo campo TIPPRODUCT tenga un valor determinado, por ejemplo “KT” (filter)</li>
+    <li>Obtengan un nuevo array en el que cada elemento contenga el código de contrato concatenado con el digito de
+        control (campos codCONTRAT y digContrat), además del saldo en euros (campo SALCONTRAT dividido entre 100) (map)
+    </li>
+    <li>Obtengan todos los contratos que en su campo acciones contengan la clave “SITUACION” (filter por la
+        subestructura)</li>
+    <li>Obtengan un array que contenga todas las acciones posibles (map y spread)</li>
+    <li>Combinaciones de las anteriores, etc</li>
+</ol>
+<p class="text-danger">En todo lo anterior no pueden usar bucles for ni foreach, por supuesto</p>
+
+<div ng-controller="contratosController">
+    <h2>{{titulo}}</h2>
+    <p>Numero de Contratos <b>{{contratos.length}}</b></p>
+    <p>Tipos de Producto <b>{{tiposProductos.length}}</b> {{tiposProductos}}</p>
+
+    <div class="accordion" id="accordionExample">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                        aria-expanded="true" aria-controls="collapseOne">
+                        TIPPRODUCT = “KT” (filter) <b>{{ejercicio1.length}}</b>
+                    </button>
+                </h2>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" ng-repeat='kt in ejercicio1'>{{kt}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        contratos mapeados: {{ejercicio2.length}}
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                    {{ejercicio2}}
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Contratos clave "SITUACION": {{ejercicio3.length}}
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                {{ejercicio3}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,68 @@
+body {
+  padding-top: 50px;
+}
+
+table img{
+  width: 100px;
+  height: auto;
+}
+
+
+/* estilos del componente tareas */
+body{
+  /*background-image: url("../img/background.jpg");*/
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: none;
+  background-size: 100%;
+}
+
+.tachado{
+  text-decoration: line-through;
+  color: grey;
+}
+
+.cuaderno{
+  background-color: teal;
+  z-index: 10;
+  position: absolute;
+}
+
+.lista{
+  background-color: white;
+  height: 500px;
+  width: 600px;
+  border-top-right-radius: 3%;
+  border-bottom-right-radius: 3%;
+  margin-left: 20px;
+}
+
+.lista h2,p{
+  text-align: center;
+}
+
+.tachado{
+  text-decoration: line-through;
+  color: grey;
+}
+
+.no-editable{
+  border: none;
+}
+
+/* Estilos para el componente de localizacion*/
+/* CSS google maps */
+   /* Always set the map height explicitly to define the size of the div
+     * element that contains the map. */
+     #map {
+      height: 100%;
+  }
+
+  /* Optional: Makes the sample page fill the window. */
+  html,
+  body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+  }

@@ -1,0 +1,7 @@
+<!--componente-alert -->
+<div class="alert alert-{{$ctrl.clase}} alert-dismissible fade show" role="alert">
+  <span ng-bind-html="$ctrl.texto"></span>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-hide="{{($ctrl.clase)?'false':'true'}}">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>

@@ -1,0 +1,45 @@
+  <!-- se conoce como pipe ( | ) e indica que tiene un filtro detras, en este caso de uppercase-->
+  <h1>{{titulo}} - {{"Welcome to the hell - Angular js" |  uppercase }}</h1>    
+  <!-- abreviacion para que salga: div.container#header-->
+  <div class="container" id="header">
+      <h2>Filtros</h2>
+      <a href="https://docs.angularjs.org/api/ng/filter" target="_blank">Documentación Oficial de filtros</a>
+      <ul class="list-group">
+          <li class="list-group-item">uppercase => {{ "uPpErcAse" | uppercase}}</li>
+          <li class="list-group-item">lowercase => {{ "LOWERCASE" | lowercase}}</li>
+          <li class="list-group-item">currency => {{ 12345.67 | currency:"€":2}}</li>
+          <li class="list-group-item">number => {{605.7896 | number : 2}}</li>
+          <li class="list-group-item">date => {{'20191003T00:00:00' | date : 'dd-MM-yyyy' }}</p>
+          </li>
+      </ul>
+      <h2>Directiva ng-model</h2>
+      <!-- ng-model se utiliza para definir una variable -->
+      <p> Su nombre: {{ nombre | uppercase}} 
+          <input type="text" ng-model="nombre" placeholder="Dime tu nombre" class="form-control">
+      </p>
+      <p>
+          Su pais {{pais}}
+          <select ng-model="pais">
+              <option value="es">España</option>
+              <option value="eeuu">EEUU</option>
+              <option value="fr">Francia</option>
+          </select>
+      </p>
+      <p>
+          Tus gustos: g1:{{g1}} g2:{{g2}} g3:{{g3}} g4:{{g4}} 
+          <br>
+          <!-- abreviacion para escribir: input.checkbox*4 -->
+          <input type="checkbox" ng-model="g1"> Musica<br>
+          <input type="checkbox" ng-model="g2"> Surf<br>
+          <input type="checkbox" ng-model="g3"> Bromas<br>
+          <input type="checkbox" ng-model="g4"> Caidas<br>
+      </p>
+      <p>Seleccione su genero {{genero}} <br />
+          <input type="radio" ng-model="genero" value="M"> Masculino <br />
+          <input type="radio" ng-model="genero" value="F">Feminino <br />
+          <input type="radio" ng-model="genero" value="I">Indefinido <br />
+      </p>
+
+      <!-- generamos un fichero controlador llamado app.js-->
+
+  </div> <!-- end container-->

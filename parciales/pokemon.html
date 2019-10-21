@@ -1,0 +1,36 @@
+<h2> POKEDEX </h2>
+Buscar Pokemon: <input class="form-control col-4 mb-2" type="text" ng-model="busqueda.name" name="" id="" placeholder="Nombre">
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Foto</th>
+            <th scope="col">Experiencia</th>
+            <th scope="col">Altura</th>
+            <th scope="col">Peso</th>
+            <th scope="col">Habilidades</th>
+            <th scope="col">Movimientos</th>
+            <th scope="col">Tipo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="pokemon in pokemons | orderBy:'order' | filter:busqueda">
+            <td>{{pokemon.order}}</td>
+            <th scope="row"><a ng-href="#!/pokemon/{{pokemon.name}}">{{pokemon.name}}</a></th>
+            <td><img ng-src="{{pokemon.sprites.front_default}}" alt="{{pokemon.name}}" heigth="200" width="200"></td>
+            <td>{{pokemon.base_experience}}</td>
+            <td>{{pokemon.height}}</td>
+            <td>{{pokemon.weight}}</td>
+            <td>{{pokemon.abilities.length}}</td>
+            <td>{{pokemon.moves.length}}</td>
+            <td>
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="type in pokemon.types">{{type.type.name}}</li>
+                </ul>
+            </td>
+        </tr>
+
+
+    </tbody>
+</table>

@@ -1,0 +1,50 @@
+<h1>{{detallePokemon.name | uppercase}}</h1>
+
+<div class="row">
+    <div class="col"><img src="{{detallePokemon.sprites.back_shiny}}" heigth="200" width="200"></div>
+    <div class="col"><img src="{{detallePokemon.sprites.front_default}}" heigth="200" width="200"></div>
+    <div class="col"><img src="{{detallePokemon.sprites.back_default}}" heigth="200" width="200"></div>
+    <div class="col"><img src="{{detallePokemon.sprites.front_shiny}}" heigth="200" width="200"></div>
+</div>
+
+<div class="row">
+<div class="col-4">
+    <img ng-src="{{detallePokemon.sprites.front_default}}" alt="{{pokemon.name}}">  
+    <p>PESO : {{detallePokemon.weight}}</p>
+    <p>ALTURA : {{detallePokemon.height}}</p>
+</div>    
+<div class="col-4">
+        TYPE
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat = "type in detallePokemon.types">{{type.type.name}}</li>
+            </ul>
+    
+</div>
+<div class="col-4">
+<table class="table">
+    <thead>
+        <tr>
+            <th>STATS</th>
+            <th>LEVEL</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="stats in detallePokemon.stats">
+        <td>
+            {{stats.stat.name}}
+        </td>
+         <td>   
+            {{stats.base_stat}}
+         </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+
+</div>
+
+
+
+
+

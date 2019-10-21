@@ -1,0 +1,115 @@
+<h1>Ejercicio controlador profesor</h1>
+<!--   Generaremos fichero controlador app.js,
+ Añadir en ng-app el nombre de la aplicacion especificada en app.js en angular.module,
+ app.controller = para indicar que es un controller
+ ng-controller = para asociar el controlador al html    -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <div ng-controller="profesorController as pc">
+                <h4>{{profesor.nombre}}</h4>
+                <hr>
+
+                <div class="row">
+
+                    <!-- Div que contiene la imagen del profesor -->
+                    <div class="col-sm-3">
+                        <section class="panel">
+                            <div class="panel-body" align="center">
+                                <img src="{{profesor.foto}}" class="rounded-circle" alt="" width="150px"
+                                    height="150px">
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- Div, donde se mostrará la bio del profesor -->
+                    <div class="col-sm-9">
+                        <section class="panel">
+                            <div class="panel-body">
+                                {{profesor.bio}}
+                                <br>
+                                <br>
+                                <strong>Edad:</strong> {{profesor.edad}} años
+                            </div>
+                        </section>
+                    </div>
+                    <button class="btn btn-primary" ng-click="editar()">Editar</button>
+                </div>
+
+                <div class="row {{animacion}}" ng-show="esVisible">
+                    <div class="col-sm">
+                        <section class="panel">
+                            <div class="panel-body">
+                                Nombre:<br />
+                                <input type="text" ng-model="editando.nombre" class="form-control">
+                                Edad:<br />
+                                <input type="text" ng-model="editando.edad" class="form-control">
+                                Biografia:<br />
+                                <textarea id="" ng-model="editando.bio" cols="150" rows="5"></textarea>
+                            </div>
+                        </section>
+                    </div>
+                    <button class="btn btn-primary" ng-click="guardar()">Guardar</button>
+                    <button class="btn btn-danger" ng-click="cancelar()"> Cancelar</button>
+                </div>
+
+
+            </div> <!-- /profesorController  -->
+
+
+            <div ng-controller="videoController as vc">
+                <h4>{{video.nombre}}</h4>
+
+                <hr>
+
+                <div class="row">
+
+                    <!-- Div que contiene la imagen del video -->
+                    <div class="col-sm-9">
+                        <section class="panel">
+                            <div class="panel-body" align="center">
+                                <iframe src="https://www.youtube.com/embed/Q0oIoR9mLwc" frameborder="0" width="560"
+                                    height="315"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- Div, donde se mostrará la bio del video -->
+                    <div class="col-sm-3">
+                        <section class="panel">
+                            <div class="panel-body">
+                                <p class=" btn-like {{animacion}}" ng-click="sumarLike()"><i
+                                        class="far fa-heart fa-2x"></i>
+                                    {{video.likes}}</p>
+                                <strong>categoria:</strong> {{video.categoria.nombre}}
+                                <br />
+                                <br />
+                                <strong>Usuario:</strong> {{video.usuario.nombre}}
+                            </div>
+                        </section>
+                    </div>
+
+                </div>
+            </div> <!-- /videoController  -->
+        </div> <!-- end 1º columna  -->
+        <div class="col-sm">
+            <h2>Ejemplo directiva <b>ng-repeat</b></h2>
+            Fruta Seleccionada: {{frutaSeleccionada}}
+            <div class="col" ng-controller="frutasEjer2Controller">
+                <ul class="list-group">
+                    <li class="{{ (frutaSeleccionada == f) ? 'list-group-item active' : 'list-group-item' }}"
+                        ng-click="seleccionado(f)" ng-repeat="f in frutas">{{f}}</li>
+                </ul>
+                <br>
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="fj in frutasJson.frutas">{{fj.nombre}} - {{fj.color}}
+                    </li>
+                </ul>
+            </div>
+        </div> <!-- end 2º columna  -->
+    </div>
+</div> <!-- end container  -->

@@ -1,0 +1,47 @@
+<h1>Fruteria</h1>
+        <div class="col" ng-controller="frutasController">
+            <div class="row">
+                <p>Filtro:
+                    <input class="form-control" type="text" ng-model="busqueda.nombre" id="busqueda" placeholder="Buscar">
+                </p>
+                <p class="ml-5">Filtro: 
+                    <select class="form-control" ng-model="busqueda.color">
+                        <option value="">Todos</option>
+                        <option value="marron">Marron</option>
+                        <option value="verde">Verde</option>
+                    </select>
+                </p>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr class="text-center">
+                        <th scope="col">Imagen</th>
+                        <th scope="col" ng-click="columna = 'nombre'; reverse = !reverse;">Nombre</th>
+                        <th scope="col" ng-click="columna = 'precio'; reverse = !reverse;">Precio</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="text-center" ng-repeat="fj in frutasJson.frutas | filter:busqueda | orderBy:columna:reverse">
+                        <td class="align-middle"><img src="{{fj.img}}" alt="{{fj.nombre}}" width="100px"></td>
+                        <td class="align-middle">{{fj.nombre}}</td>
+                        <td class="align-middle">{{fj.precio | currency}} /Kg</td>
+                        <td class="align-middle"><i class="fas fa-minus" ng-click="restar(fj)"></i>
+                            {{fj.cantidad}}
+                            <i class="fas fa-plus" ng-click="sumar(fj)"></i>
+                        </td>
+                        <td class="align-middle"><button class="btn btn-success" ng-click="comprar(fj)"><i
+                                    class="fas fa-shopping-cart"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td class="text-right" colspan="3">TOTAL</td>
+                        <td>{{total | currency}}</td>
+                        <td class="align-middle"><button class="btn btn-danger" ng-click="borrar(fj)"><i
+                                    class="fas fa-trash-alt"></i></button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div><!-- end div row -->

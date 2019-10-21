@@ -1,0 +1,48 @@
+<h1>Componente boton</h1>
+<h2>Ejemplo componente desde HTML</h2>
+<componente-boton></componente-boton>
+
+<h2>Ejemplos componente enlazado desde una ruta</h2>
+<a ng-href="#!/componente2">Pulsa para navegar a el</a>
+
+<h1>Ejercicio Componentes</h1>
+<a href="https://docs.angularjs.org/tutorial/step_03" target='_blank'>Tutorial oficial - Componentes</a> <br>
+<a href="https://docs.angularjs.org/guide/component" target='_blank'>Documentacion oficial - Componentes</a>
+
+<p>Nuestro primer componente</p>
+<saludo-usuario></saludo-usuario>
+<br> <hr>
+<p>Nuestro segundo componente con template para el HTML</p>
+<componente-boton></componente-boton>
+<br> <hr>
+<p>Nuestro tercer componente para la calificacion del curso</p>
+<componente-calificacion pnota="0"></componente-calificacion>
+<br><hr>
+<p>Nuestro tercer componente para la calificacion del curso aplicado a una tabla</p>
+<table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Asignatura</th>
+            <th scope="col">Calificación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">HTML</th>
+            <td><componente-calificacion pnota="5"></componente-calificacion></td>
+          <tr>
+            <th scope="row">CSS</th>
+            <td><componente-calificacion pnota="8"></componente-calificacion></td>
+          </tr>
+          <tr>
+            <th scope="row">JS</th>
+            <td><componente-calificacion pnota="7"></componente-calificacion></td>
+          </tr>
+          <tr>
+            <th scope="row">Angular JS</th>
+            <td><componente-calificacion pnota="3"></componente-calificacion></td>
+         </tr>
+        </tbody>
+</table>
+<h2>Listado Telefonos</h2>
+<phone-list></phone-list>

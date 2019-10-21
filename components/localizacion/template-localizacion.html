@@ -1,0 +1,47 @@
+<div class="container" ng-controller="mainCtrl">
+    <h1>Localizacion</h1>
+    <p>Usamos un servicio externo para GeoLocalizarnos, el cual responde con datos en <b>JSONP</b></p>
+    <p>URL del servicio <a ng-href="{{SERVICE_URL}}" target="_blank"> {{SERVICE_URL}}</a></p>
+    <a href="https://developers.google.com/maps/documentation/javascript/examples" target="_blank">Google Maps Code Samples</a>
+    <br>
+    <a href="https://developers-dot-devsite-v2-prod.appspot.com/maps/documentation/javascript/examples/marker-simple" target="_blank">Simple Marker</a>
+    <br>
+    <button class="btn btn-primary mb-2" ng-click="localizar()">Localizar</button>
+    <div class="row" ng-hide="ocultarDatos">
+        <div class="col-3">
+            <ul class="list-group">
+                <li class="list-group-item">Ip: {{localizacion.geoplugin_request}}</li>
+                <li class="list-group-item">Ciudad: {{localizacion.geoplugin_city}}</li>
+                <li class="list-group-item">Región: {{localizacion.geoplugin_region}}</li>
+                <li class="list-group-item">Latitud: {{localizacion.geoplugin_latitude}}</li>
+                <li class="list-group-item">Longitud: {{localizacion.geoplugin_longitude}}</li>
+                <li class="list-group-item">Moneda: {{localizacion.geoplugin_currencyCode}} {{localizacion.geoplugin_currencySymbol}}</li>
+            </ul>
+        </div>
+        <div class="col-9">
+            <a href=""></a>
+
+            <div id="map"></div>
+            <script>
+                function initMap() {
+                    var myLatLng = {
+                        lat: -25.363,
+                        lng: 131.044
+                    };
+
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 4,
+                        center: myLatLng
+                    });
+
+                    var marker = new google.maps.Marker({
+                        position: myLatLng,
+                        map: map,
+                        title: 'Hello World!'
+                    });
+                }
+            </script>
+
+        </div>
+    </div> <!-- fin del row -->
+</div><!-- fin del mainCtrl -->

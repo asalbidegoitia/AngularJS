@@ -1,0 +1,49 @@
+<div ng-controller="crudController">
+    <h1>{{titulo}}</h1>
+    <p>Ejercicio con las operaciones crud realizado con el proyecto de musicOnCloud</p>
+    <!--  {{canciones | json}} -->
+    <h2>Crear cancion</h2>
+    <componente-alert clase="{{mensaje.clase}}" texto="{{mensaje.texto}}"></componente-alert>
+    <form>
+        <div class="form-group">
+            <label for="idNombre">Nombre</label>
+            <input type="text" ng-model="nombre" class="form-control" id="idNombre" placeholder="Nombre cancion">
+            <button type="submit" class="btn btn-primary mt-2" ng-click="nuevaCancion(nombre)"
+                ng-disabled="((nombre==undefined)?'disabled':(nombre=='')?'disabled':'')">Nueva</button>
+        </div>
+    </form>
+
+    <!-- TODO hacer que modifique al pulsar guardar -->
+    <h2>Modificar cancion</h2>
+    <form name="canciones">
+        <div class="form-group">
+            <label for="nombreCancion">Titulo:</label>
+            <input type="text" class="form-control" ng-model="cancionEditar.nombre" id="nombreCancion"
+                placeholder="titulo de la cancion">
+        </div>
+        <button type="submit"
+            ng-click="((!cancionEditar.id)?'':modificarCancion(cancionEditar))"
+            ng-disabled="((cancionEditar.nombre==undefined)?'disabled':(cancionEditar.nombre=='')?'disabled':'')"
+            class="btn btn-primary">Guardar</button>
+    </form>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Titulo</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="cancion in canciones | orderBy:'id' ">
+                <th scope="row">{{cancion.id}}</th>
+                <td>{{cancion.nombre}}</td>
+                <td class="align-middle"><button class="btn btn-success" type="submit"
+                        ng-click="modificarCancion(cancion)"><i class="fas fa-edit"></i> Editar</button>
+                    <button class="btn btn-danger" type="submit" ng-click="eliminarCancion(cancion.id)"><i
+                            class="fas fa-trash-alt"></i> Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

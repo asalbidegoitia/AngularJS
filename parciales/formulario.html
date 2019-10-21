@@ -1,0 +1,51 @@
+<div ng-controller="formularioController">
+    <h1>{{titulo}}</h1>
+    <div class="row">
+        <div class="col-8">
+            <p>
+                <ul>
+                    <li> <code>name="formulario"</code> el nombre que tendra el formulario con el que conseguimos un
+                        Json con toda su estructura</li>
+                    <li> <code>novalidate</code> Para que no se valide en el HTML </li>
+                    <li><code>ng-submit="guardarDatos(formulario.$valid)"</code> Para llamar a la funcion que guardara
+                        los datos</li>
+                    <li> <code>name="nombre"</code> El nombre que tendra el campo en el json - formulario</li>
+                    <li><code>ng-model="formData.nombre"</code> El nombre que llegara al controlador para validar y
+                        guardar los datos </li>
+                    <li><code>class=" {-{(formulario.nombre.$valid)?'is-valid':'is-invalid'}-}"</code> Aplicar el estilo
+                        dependiendo del contenido del campo para indicar si es valido o no valido </li>
+                </ul>
+
+            </p>
+
+            <form name="formulario" ng-submit="guardarDatos(formulario.$valid)" novalidate>
+                <div class="form-group" ng-class="">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" class="form-control {{(formulario.nombre.$valid)?'is-valid':'is-invalid'}}"
+                        id="nombre" name="nombre" required minlength="2" maxlength="250"
+                        placeholder="Introduzca su nombre" ng-model="formData.nombre">
+                    <small class="from-text text-muted  " ng-hide="formulario.nombre.$valid">Minimo 2 maximo 250
+                        caracteres</small>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email"
+                        class="form-control {{(formulario.email.$valid && !formulario.$pristine)?'is-valid':'is-invalid'}}"
+                        id="email" name="email" required placeholder="Introduzca su email" ng-model="formData.email">
+                    <small class="from-text text-muted invalid-feedback">Es obligatorio que tenga formato email</small>
+                </div>
+                <button type="submit" class="btn btn-primary" ng-disabled="formulario.$invalid">Enviar</button>
+            </form>
+
+        </div>
+        <div class="col-4">
+            <div class="card bg-dark text-white">
+                <div class="card-header">Estructura de datos</div>
+                <div class="card-body ">
+                    <span class="card-text">
+                        <pre class="text-white">{{formulario | json}} </pre></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
