@@ -6,6 +6,7 @@ Ejercicios de Angular JS del repositorio EjerciciosAngularJS unificados en un mi
 
 ## Screenshot del proyecto
 
+![image](https://user-images.githubusercontent.com/16878209/67201516-c4c90400-f406-11e9-8c16-be77462a0994.png)
 
 
 ## Pasos a seguir para clonar el proyecto en otro equipo:
